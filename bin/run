@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+docker run -p 192.168.1.10:5000:5000 \
+    --name registry \
+    -e STANDALONE=false \
+    -e MIRROR_SOURCE=https://registry-1.docker.io \
+    -e MIRROR_SOURCE_INDEX=https://index.docker.io \
+    -v $PWD/data:/tmp \
+    registry
