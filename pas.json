@@ -1,0 +1,21 @@
+{
+    "name": "xinix-technology/registry",
+    "docker": {
+        "containers": {
+            "root": {
+                "image": "registry",
+                "env": {
+                    "STANDALONE": "false",
+                    "MIRROR_SOURCE": "https://registry-1.docker.io",
+                    "MIRROR_SOURCE_INDEX": "https://index.docker.io"
+                },
+                "volumes": [
+                    "/srv/docker/docker-registry/data:/tmp"
+                ],
+                "ports": [
+                    "5000:5000"
+                ]
+            }
+        }
+    }
+}
